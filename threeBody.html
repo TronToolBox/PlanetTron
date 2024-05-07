@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planet Tron (3-Body): BTTC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.6.0/dist/web3.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+  <link rel="icon" href="backgroundSpace.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="styles/full.css">
+
+  <style>
+    .threeBody-buttons {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+      background-color: rgb(40, 40, 40);
+      border-radius: 1rem;
+    }
+
+    .threeBody-buttons button {
+      background: none;
+      border: none;
+      font-size: 20px;
+      padding: 10px 15px;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .threeBody-buttons button:hover {
+      background-color: #555;
+      color: white;
+    }
+
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    #container img {
+      max-width: 200px;
+      height: auto;
+    }
+
+    .threeBody-explanation {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Style for download button */
+    .download-button {
+      display: inline-block;
+      background-color:  rgb(40, 40, 40);
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="brand-title jersey-15-regular">Planet Tron</a>
+    <div class="navbar-links">
+      <ul>
+        <li><a href="solarSystem.html">Solar System</a></li>
+        <li><a href="planets.html">Planets</a></li>
+        <li><a href="threeBody.html">3-Body</a></li>
+        <button class="connect-metamask-button" onclick="connectMetamask()">Connect Metamask</button>
+        <button class="activate">BTTC-SpacePlus: off</button>
+      </ul>
+    </div>
+    <a href="#" class="toggle-button">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </a>
+  </nav>
+
+  <!--Content-->
+  <div class="content">
+    <div class="threeBody-explanation">
+      <p>The three-body problem is a mathematical problem that deals with the motion of three point masses in space subject to Newton's law of universal gravitation.</p>
+    </div>
+
+    <div class="threeBody-buttons">
+      <button onclick="showthreeBody('3body-1')">1</button>
+      <button onclick="showthreeBody('3body-2')">2</button>
+      <button onclick="showthreeBody('3body-3')">3</button>
+      <button onclick="showthreeBody('3body-4')">4</button>
+    </div>
+
+    <div class="wrapper" id="container"></div>
+
+    <div id="preview-container"></div>
+
+    
+    <button class="hidden hidden-button" id="backgroundButton">Theme</button>
+    <button class="hidden hidden-button" id="audioButton">Audio</button>
+    <a id="downloadButton" class="download-button" download="threebody.gif"><i class="fa fa-save" style="font-size:0.9rem;"></i></a>
+
+  </div>
+  <!--Content-->
+
+  <footer>
+    Planet Tron | Let's discover Space w/ Tron
+    <div id="bttTransactions" class="hidden" style="font-size: 0px;"></div>
+  </footer>
+
+  <script src="action/default_wallet.js"></script>
+  <script src="action/button.js"></script>
+  <script src="action/background.js"></script>
+  <script src="action/audio.js"></script>
+  <script src="action/card.js"></script>
+  <script src="default/default_smartcontract.js"></script>
+
+  <script>
+    function showthreeBody(threeBodyName) {
+      document.getElementById("container").innerHTML = "";
+
+      const threeBodyImage = document.createElement("img");
+      threeBodyImage.src = `threeBody/${threeBodyName}.gif`;
+      threeBodyImage.alt = threeBodyName;
+
+      document.getElementById("container").appendChild(threeBodyImage);
+
+      document.getElementById("downloadButton").href = `threeBody/${threeBodyName}.gif`;
+
+      const threeBodyCards = document.querySelectorAll('.card');
+      threeBodyCards.forEach(card => {
+        card.classList.add('hidden');
+      });
+
+      const selectedthreeBodyCard = document.getElementById(threeBodyName);
+      selectedthreeBodyCard.classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>

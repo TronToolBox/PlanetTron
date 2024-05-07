@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planet Tron: BTTC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.6.0/dist/web3.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+  <link rel="icon" href="backgroundSpace.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="styles/full.css">
+
+  
+  <style>
+    h3 {
+      color: white;
+    }
+  </style>
+</head>
+<body >
+  <nav class="navbar">
+    <a href="index.html" class="brand-title jersey-15-regular">Planet Tron</a>
+    <div class="navbar-links">
+      <ul>
+        <li><a href="solarSystem.html">Solar System</a></li>
+        <li><a href="planets.html">Planets</a></li>
+        <li><a href="threeBody.html">3-Body</a></li>
+        <button class="connect-metamask-button" onclick="connectMetamask()">Connect Metamask</button>
+        <button class="activate">BTTC-SpacePlus: off</button>
+      </ul>
+    </div>
+    <a href="#" class="toggle-button">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </a>
+  </nav>
+
+  <!--Content-->
+  <div class="content">
+    
+    <p>TRON Hackathon Season 6</p>
+    <h3>Devpost: X</h3>
+    <h3>TRON Dao Forum: </h3>
+    
+    <!-- Hidden buttons -->
+
+
+    
+    <div id="preview-container"></div>
+    
+    <button class="hidden hidden-button" id="backgroundButton">Theme</button>
+    <button class="hidden hidden-button" id="audioButton">Audio</button>
+    
+      
+  </div>
+  <!--Content-->
+
+  
+  <footer>
+    Planet Tron | Let's discover Space w/ Tron
+    <div id="bttTransactions" class="hidden" style="font-size: 0px;"></div>
+  </footer>
+
+  <script src="action/default_wallet.js"></script>
+  <script src="action/button.js"></script>
+  <script src="action/background.js"></script>
+  <script src="action/audio.js"></script>
+  <script src="action/card.js"></script>
+  <script src="default/default_smartcontract.js"></script>
+
+</body>
+</html>
